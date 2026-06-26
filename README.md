@@ -44,7 +44,7 @@ No data leaves your machine.
 wget https://github.com/nadiee12312-lgtm/Obsidian-framework/releases/latest/download/obsidian-v1.1-linux-x86_64.tar.gz
 
 # Extract and install
-tar -xzf obsidian-v1.1-linux-x86_64.tar.gz && cd obsidian-dist
+tar -xzf obsidian-v1.0-linux-x86_64.tar.gz && cd obsidian-dist
 bash obsidian_install.sh
 ```
 
