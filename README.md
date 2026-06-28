@@ -1,4 +1,8 @@
-# ⬛ OBSIDIAN Investigator
+<p align="center">
+  <img src="obsidian-logo.svg" alt="OBSIDIAN" width="130">
+</p>
+
+<h1 align="center">OBSIDIAN Investigator</h1>
 
 [![GitHub Stars](https://img.shields.io/github/stars/nadiee12312-lgtm/Obsidian-framework?style=social)](https://github.com/nadiee12312-lgtm/Obsidian-framework)
 [![GitHub Issues](https://img.shields.io/github/issues/nadiee12312-lgtm/Obsidian-framework)](https://github.com/nadiee12312-lgtm/Obsidian-framework/issues)

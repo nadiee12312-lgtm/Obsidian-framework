@@ -1,0 +1,16 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="200" height="200" role="img" aria-label="OBSIDIAN logo">
+  <defs>
+    <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <!-- octágono exterior -->
+  <polygon points="172.9,128.8 128.8,172.9 71.2,172.9 27.1,128.8 27.1,71.2 71.2,27.1 128.8,27.1 172.9,71.2"
+           fill="none" stroke="#a855f7" stroke-width="4" filter="url(#glow)"/>
+  <!-- octágono interior, rotado 22.5° -->
+  <polygon points="148.0,119.9 119.9,148.0 80.1,148.0 52.0,119.9 52.0,80.1 80.1,52.0 119.9,52.0 148.0,80.1"
+           fill="none" stroke="#a855f7" stroke-width="3.5" filter="url(#glow)" transform="rotate(22.5 100 100)"/>
+  <!-- cuadrado lleno central -->
+  <rect x="78" y="78" width="44" height="44" rx="3" fill="#a855f7" filter="url(#glow)"/>
+</svg>
