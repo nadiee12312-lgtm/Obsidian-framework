@@ -79,6 +79,3 @@ Include: your OS and what happened.
 
 Questions? nadiee567@gmail.com
 
----
-
-**Lo nuevo:** ⚖️ disclaimer legal/ético · ⭐ CTA de estrella (ayuda a crecer) · + todos los fixes anteriores.
