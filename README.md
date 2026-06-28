@@ -1,3 +1,4 @@
+
 # ⬛ OBSIDIAN Investigator
 
 [![GitHub Stars](https://img.shields.io/github/stars/nadiee12312-lgtm/Obsidian-framework?style=social)](https://github.com/nadiee12312-lgtm/Obsidian-framework)
@@ -37,41 +38,47 @@ No data leaves your machine.
 
 ## Installation
 
-**Requirements:** Linux x86_64 · Python 3.10+ · 4GB RAM
+**Requirements:** Linux x86_64 · 4GB RAM · No dependencies (self-contained)
 
 ```bash
 # Download
 wget https://github.com/nadiee12312-lgtm/Obsidian-framework/releases/latest/download/obsidian-v1.1-linux-x86_64.tar.gz
 
 # Extract and install
-tar -xzf obsidian-v1.0-linux-x86_64.tar.gz && cd obsidian-dist
+tar -xzf obsidian-v1.1-linux-x86_64.tar.gz && cd obsidian-dist
 bash obsidian_install.sh
-```
-
 Start OBSIDIAN:
-```bash
 obsidian-web
-```
 
-Open: `http://localhost:8767`
-From your phone: `http://YOUR-LOCAL-IP:8767`
+Open: http://localhost:8767
+From your phone: http://YOUR-LOCAL-IP:8767
 
 ---
+⚖️ Legal & Ethical Use
 
-## Want more?
+OBSIDIAN gathers publicly available information for legal and authorized purposes only — security research, your own digital footprint, authorized investigations and education.
+
+You are responsible for complying with the laws of your jurisdiction. Do not use OBSIDIAN for harassment, stalking, doxxing, or any illegal activity. The author is not responsible for misuse.
+
+---
+Want more?
 
 OBSIDIAN Investigator covers the essentials. If you need deeper recon, offensive tools and AI-powered analysis, check out the paid tiers:
 
-**[obsidian.pro](https://nadiee12312-lgtm.github.io/Obsidian-framework)** — Analyst ($9) · Professional ($20)
+obsidian.pro — Analyst ($9) · Professional ($20)
+
+---
+Found a bug?
+
+Open an issue here → github.com/nadiee12312-lgtm/Obsidian-framework/issues
+
+Include: your OS and what happened.
+
+---
+⭐ If OBSIDIAN is useful to you, star the repo — it helps more people find it.
+
+Questions? nadiee567@gmail.com
 
 ---
 
-## Found a bug?
-
-Open an issue here → **[github.com/nadiee12312-lgtm/Obsidian-framework/issues](https://github.com/nadiee12312-lgtm/Obsidian-framework/issues)**
-
-Include: your OS, Python version, and what happened.
-
----
-
-*Questions? nadiee567@gmail.com*
+**Lo nuevo:** ⚖️ disclaimer legal/ético · ⭐ CTA de estrella (ayuda a crecer) · + todos los fixes anteriores.
