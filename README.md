@@ -2,82 +2,134 @@
   <img src="obsidian-logo.svg" alt="OBSIDIAN" width="130">
 </p>
 
-<h1 align="center">OBSIDIAN Investigator</h1>
+<h1 align="center">OBSIDIAN</h1>
 
-[![GitHub Stars](https://img.shields.io/github/stars/nadiee12312-lgtm/Obsidian-framework?style=social)](https://github.com/nadiee12312-lgtm/Obsidian-framework)
-[![GitHub Issues](https://img.shields.io/github/issues/nadiee12312-lgtm/Obsidian-framework)](https://github.com/nadiee12312-lgtm/Obsidian-framework/issues)
-[![Platform](https://img.shields.io/badge/platform-Linux-blue)](https://github.com/nadiee12312-lgtm/Obsidian-framework)
-
-> **Free OSINT framework. Runs 100% on your machine.**
-> No subscriptions. No cloud. No tracking.
-> ⚠ Linux only (x86_64) — Mac and Windows support coming soon.
+<p align="center"><b>Free, local OSINT framework. Runs 100% on your machine — no cloud, no tracking.</b></p>
 
 ---
 
-## What is OBSIDIAN?
+## What is OBSIDIAN
 
-OBSIDIAN is a local OSINT investigation tool with a web interface you can access from any device — including your phone. Enter a name, username, domain, IP or email and OBSIDIAN gathers everything automatically, builds a relationship graph and lets you export a full report.
+OBSIDIAN is a local OSINT investigation tool with a web interface you can reach from any device on your network, including your phone. Enter a name, username, domain, IP, email or phone number, and OBSIDIAN gathers public information, builds a relationship graph, and lets you export a full report.
 
-No data leaves your machine.
+No data ever leaves your machine.
 
----
+## Features
 
-## What's included (free)
+- **Persona** — name search across public sources, social profiles, breach data
+- **Username** — checks 10+ platforms in parallel
+- **Domain** — WHOIS, DNS, subdomains (crt.sh), HTTP headers, Wayback Machine
+- **IP** — geolocation, ASN, PTR, top-port scan
+- **Email** — breach check (HIBP), SPF/DKIM/DMARC, spoofability
+- **Phone** — carrier, line type, country
+- **SSL** — cipher analysis, HSTS, certificate info
+- **Metadata** — EXIF from images and files
+- **Relationship graph** — every finding connected visually, auto-updated
+- **Timeline** — chronological view of all findings
+- **Case management** — save, load and export cases as HTML reports
+- **Mobile UI** — works from your phone over the local network
 
-- 🔍 **Persona** — name search across public sources, social profiles, breach data
-- 👤 **Username** — checks 10+ platforms simultaneously
-- 🌐 **Domain** — WHOIS, DNS records, subdomains (crt.sh), HTTP headers, Wayback Machine
-- 🖥 **IP** — geolocation, ASN, PTR, open ports (top 20)
-- 📧 **Email** — breach check (HIBP), SPF/DKIM/DMARC, spoofability
-- 📱 **Phone** — carrier, line type, country
-- 🔐 **SSL** — cipher analysis, HSTS, certificate info
-- 🗂 **Metadata** — EXIF data from images and files
-- 🕸 **Relationship graph** — all data connected visually, auto-updated
-- 📅 **Timeline** — chronological view of all findings
-- 📁 **Case management** — save, load and export cases as HTML reports
-- 📱 **Mobile UI** — works on your phone via local network
+## Requirements
 
----
+- Linux (x86_64)
+- Python 3.7+
+- ~4GB RAM
 
 ## Installation
 
-**Requirements:** Linux x86_64 · 4GB RAM · No dependencies (self-contained)
-
 ```bash
-wget https://github.com/nadiee12312-lgtm/Obsidian-framework/releases/latest/download/obsidian-v1.1-linux-x86_64.tar.gz
-tar -xzf obsidian-v1.1-linux-x86_64.tar.gz && cd obsidian-dist
-bash obsidian_install.sh
-obsidian-web
+git clone https://github.com/nadiee12312-lgtm/Obsidian-framework
+cd Obsidian-framework
+pip install -r requirements.txt
+python3 obsidian_web.py
 ```
 
-Then open `http://localhost:8767` in your browser — or `http://YOUR-LOCAL-IP:8767` from your phone (same WiFi).
+Then open **http://localhost:8767** in your browser.
 
----
+### Optional system tools
 
-## ⚖️ Legal & Ethical Use
+Some modules use command-line tools. OBSIDIAN runs without them, but installs
+them for full functionality:
 
-OBSIDIAN gathers **publicly available** information for **legal and authorized purposes only** — security research, your own digital footprint, authorized investigations and education.
+```bash
+# Debian/Ubuntu
+sudo apt install nmap whois dnsutils exiftool
 
-You are responsible for complying with the laws of your jurisdiction. **Do not** use OBSIDIAN for harassment, stalking, doxxing, or any illegal activity. The author is not responsible for misuse.
+# Fedora
+sudo dnf install nmap whois bind-utils perl-Image-ExifTool
+```
 
----
+## Access from your phone
 
-## Want more?
+By default OBSIDIAN listens only on your own machine (`127.0.0.1`). To reach it
+from your phone on the same WiFi:
 
-OBSIDIAN Investigator covers the essentials. If you need deeper recon, offensive tools and AI-powered analysis, check out the paid tiers:
+```bash
+OBSIDIAN_HOST=0.0.0.0 python3 obsidian_web.py
+```
 
-**[obsidian.pro](https://nadiee12312-lgtm.github.io/Obsidian-framework)** — Analyst ($9) · Professional ($20)
+Then open `http://YOUR-LOCAL-IP:8767` from your phone.
 
----
+> ⚠ Only expose OBSIDIAN to your network (`0.0.0.0`) on a **trusted** network.
+> Anyone who can reach the interface can run its tools from your machine.
+
+## Offensive tools (advanced, optional)
+
+Beyond OSINT, OBSIDIAN can run 88 tools from **Kali, Parrot, REMnux and
+BlackArch**, each inside its own [distrobox](https://distrobox.it) container so
+they run on any Linux distro without touching your system. These are
+**optional** — every OSINT module above works without them.
+
+> These images are large (Parrot and REMnux are 15–20 GB each). Only set up the
+> distros you actually want to use.
+
+**1. Install distrobox and a container runtime**
+
+```bash
+sudo dnf install distrobox podman     # Fedora
+sudo apt install distrobox podman     # Debian/Ubuntu
+```
+
+**2. Create the containers — keep these exact names**
+
+```bash
+distrobox create --name kali      --image docker.io/kalilinux/kali-rolling
+distrobox create --name parrot    --image docker.io/parrotsec/security
+distrobox create --name remnux    --image docker.io/remnux/remnux-distro:focal
+distrobox create --name blackarch --image docker.io/archlinux:latest
+```
+
+OBSIDIAN calls the containers by these names (`kali`, `parrot`, `remnux`,
+`blackarch`) — don't rename them.
+
+**3. Install the tools you want inside each**
+
+```bash
+distrobox enter kali
+sudo apt update && sudo apt install -y nmap sqlmap nikto hydra gobuster
+exit
+```
+
+(For BlackArch, add the BlackArch repository inside the `archlinux` container
+first — see blackarch.org/downloading.html.)
+
+If a distro isn't set up, its tools won't run — but the OSINT modules work
+completely independently of them.
+
+## Legal & ethical use
+
+OBSIDIAN gathers **publicly available** information for **legal and authorized
+purposes only** — security research, checking your own digital footprint,
+authorized investigations, and education.
+
+You are responsible for complying with the laws of your jurisdiction. **Do not**
+use OBSIDIAN for harassment, stalking, doxxing, or any illegal activity.
 
 ## Found a bug?
 
-Open an issue here → **[github.com/nadiee12312-lgtm/Obsidian-framework/issues](https://github.com/nadiee12312-lgtm/Obsidian-framework/issues)**
+Open an issue: **[Issues](https://github.com/nadiee12312-lgtm/Obsidian-framework/issues)**
+Include your OS and what happened.
 
-Include: your OS and what happened.
+## License
 
----
-
-⭐ **If OBSIDIAN is useful to you, star the repo** — it helps more people find it.
-
-*Questions? nadiee567@gmail.com*
+MIT

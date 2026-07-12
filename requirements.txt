@@ -1,0 +1,12 @@
+# OBSIDIAN — dependencias de Python
+# Instalar con:  pip install -r requirements.txt
+flask>=3.0
+flask-cors>=4.0
+requests>=2.28
+beautifulsoup4>=4.11
+
+# Nota: para funcionalidad completa OBSIDIAN también usa herramientas del
+# sistema (no de pip). Instálalas con tu gestor de paquetes:
+#   nmap  whois  dnsutils(dig)  exiftool  openssl  netcat(nc)
+#   sherlock  theHarvester
+# Si falta alguna, ese módulo se salta con aviso — el resto sigue funcionando.
