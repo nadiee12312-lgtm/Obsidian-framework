@@ -70,7 +70,7 @@ OBSIDIAN_HOST=0.0.0.0 python3 obsidian_web.py
 
 Then open `http://YOUR-LOCAL-IP:8767` from your phone.
 
-> ⚠ Only expose OBSIDIAN to your network (`0.0.0.0`) on a **trusted** network.
+> **Warning:** only expose OBSIDIAN to your network (`0.0.0.0`) on a **trusted** network.
 > Anyone who can reach the interface can run its tools from your machine.
 
 ## Offensive tools (advanced, optional)
